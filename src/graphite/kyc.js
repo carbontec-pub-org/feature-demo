@@ -29,7 +29,6 @@ export const createKYCRequest = async ({address = '', privateKey = '', newLevel 
       },
       privateKey
     )
-    
     return web3.eth.sendSignedTransaction(createTransaction.rawTransaction)
   }
   catch (e) {
@@ -84,7 +83,7 @@ export const getLastRequestIndex = async (address = '') => {
     return await kycContract.methods.getLastGlobalRequestIndexOfAddress(address).call()
   }
   catch (e) {
-    console.log('getLastRequestIndex e') 
+    console.log('getLastRequestIndex e')
   }
 }
 
@@ -101,7 +100,7 @@ export const asCenterDeclineRequest = async ({centerAddress = '', index = 0}) =>
   try {
     const nonce = await getNonce(centerAddress)
     const privateKey = getCenterPrivateKey(centerAddress)
-    const tx = await kycContract.methods.declineRequest(index)
+    const tx = await kycContract.methods.declineKYCRequest(index)
     const methodEncoded = tx.encodeABI()
     const data = separator.concat(web3.utils.hexToBytes(entrypointNodeAddr)).concat(web3.utils.hexToBytes(methodEncoded))
     const createTransaction = await web3.eth.accounts.signTransaction(

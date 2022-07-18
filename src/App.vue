@@ -81,7 +81,7 @@ export default {
       },
       account2: {
         // mnemonic: 'hurry donate juice host alarm forum labor coral sleep slim month cherry upon fog spatial',
-        key: '0xeb258ef963f09006f7862a434ca75edfb3e95dfd22a900f1b6ead1bf4035d484',
+        key: '05a7fff2ccc191cd42a1ad6f58b0eecdaae38b768d7b8a07c8ff22816368fa35',
         data: null,
         startClear: false
       },
